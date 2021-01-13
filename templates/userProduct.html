@@ -1,0 +1,33 @@
+<html>
+<center>
+<form action='/submitUserProduct'>
+<table>
+<caption><b><i><u>User Product</u></i></b></caption>
+ 
+
+<tr>
+<td><b><i>E-mail:</i></b></td>
+<td><input type='text' name='email' value={{request.session.EMAIL}}></td>
+</tr>
+
+<tr>
+<td><b><i>Product ID:</i></b></td>
+<td><input type='text' name='productid'></td>
+</tr>
+
+<tr>
+<td><b><i>Channel:</i></b></td>
+<td><input type='text' name='channel'></td>
+</tr>
+
+<tr>
+    <td><b><i>Place:</i></b></td>
+    <td><input type='text' name='place'></td>
+    </tr>
+</table>
+<input type='submit'>
+</form>
+{{mesg}}
+</center>
+
+</html>

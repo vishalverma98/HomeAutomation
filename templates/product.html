@@ -1,0 +1,49 @@
+<html>
+<body bgcolor='lightblue'>
+<form action='/productsubmit' method='post' enctype="multipart/form-data"> {% csrf_token %}
+<center><b><font size='5'>Device information</b></center>
+<center><table>
+<tr>
+<td><b>Device Id:</b></td>
+<td>
+<select name='deviceid'>
+{% for rec in result %}
+  <option value={{rec.0}}>{{rec.1}}</option> 
+{% endfor %}
+ </select>   
+</td>
+</tr>
+<tr>
+<td><b>Product Id:</b></td>
+<td><input type='text' name='productid'></td>
+</tr>
+<tr>
+<td><b>Product Name:</b></td>
+<td><input type='text' name='productname'></td>
+</tr>
+<tr>
+<td><b>Product Model:</b></td>
+<td><input type='text' name='productmodel'></td>
+</tr>
+<tr>
+<td><b>Price:</b></td>
+<td><input type='numeric' name='price'></td>
+</tr>
+<tr>
+<td><b>Description:</b></td>
+<td><textarea height='3' rows='3' colms='3' name='description'></textarea></td>
+</tr>
+<tr>
+<td><b>Image:</b></td>
+<td><input type='file' name='image'></td>
+</tr>
+<tr>
+<td><input type='submit' value='Submit'></td>
+<td><input type='reset'></td><br><br>
+</tr>
+</table>
+{{msg}}
+</center>
+</form>
+</body>
+</html>

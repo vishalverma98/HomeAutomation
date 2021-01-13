@@ -1,0 +1,25 @@
+<html>
+    <center>
+   <table border='1'>
+       <caption><b><i>List of Device</i></b></caption>
+       <tr>
+           <th><i>Device Id</i></th>
+           <th><i>Device Name</i></th>
+           <th><i>Description</i></th>
+           <th><i>Image</i></th>
+           <th><i>Update</i></th>
+       </tr>
+        
+      {% for record in result %}
+            
+        <tr>
+       <td>{{record.0}}</td>
+       <td>{{record.1}}</td>
+       <td>{{record.2}}</td>
+       <td><img src=/static/{{record.3}} width='30' height='30'></td>
+       <td><a href=/displaybyid?deviceid={{record.0}}>Update</a></td>
+       </tr>
+       {% endfor %}
+   </table>
+    </center>
+</html>

@@ -1,0 +1,24 @@
+<html>
+    <form action='/devicesubmit' enctype='multipart/form-data' method="POST">{% csrf_token %}
+      <table>
+          <caption><b><i>Device Interface</i></b></caption>
+          <tr>
+             <td><b><i>Device Name:</i></b></td> 
+             <td><input type='text' name='devicename'></td>
+          </tr>
+          <tr>
+              <td><b><i>Description:</i></b></td>
+              <td><textarea rows='5' cols='25' name='description'></textarea></td>
+          </tr>
+         
+          <tr>
+            <td><b><i>Image:</i></b></td> 
+            <td><input type='file' name='deviceimage'></td>
+         </tr>
+      </table>
+      <br>
+      <input type='submit'> <input type='reset'><br><br>
+      {{msg}}
+
+    </form>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <center>
+    <table border='1'>
+        <caption><b><i>List of Device</i></b></caption><br>
+        <tr>
+            <th><i>Device Id</i></th>
+            <th><i>Product Id</i></th>
+            <th><i>Product name</i></th>
+            <th><i>Product Model</i></th>
+            <th><i>Price</i></th>
+            <th><i>Description</i></th>
+            <th><i>Image</i></th>
+            <th><i>Update</i></th>
+        </tr>
+        {% for record in result %}
+        <tr>
+            <td>{{record.0}}</td>
+            <td>{{record.1}}</td>
+            <td>{{record.2}}</td>
+            <td>{{record.3}}</td>
+            <td>{{record.4}}</td>
+            <td>{{record.5}}</td>
+            <td><img src=/static/{{record.6}} width='30' height='30'></td>
+            <td><a href='/displaybyproductid?productid={{record.1}}'>Update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <form action='/editdeletedevice' enctype='multipart/form-data' method="POST">{% csrf_token %}
+      <table>
+          <tr>
+        <td>
+        <table>
+          <caption><b><i>Device Interface</i></b></caption>
+          <tr>
+            <td><b><i>Device Id:</i></b></td> 
+            <td><input type='text' name='deviceid' value={{result.0}}></td>
+         </tr>
+          <tr>
+             <td><b><i>Device Name:</i></b></td> 
+             <td><input type='text' name='devicename' value={{result.1}}></td>
+          </tr>
+          <tr>
+              <td><b><i>Description:</i></b></td>
+              <td><textarea rows='5' cols='25' name='description'>{{result.2}}</textarea></td>
+          </tr>
+         
+         
+      </table>
+      <br>
+      <input type='submit' value='Edit' name='btn'> <input type='submit' value='Delete' name='btn'><br><br>
+      </td>
+      <td>
+          <img src=/static/{{result.3}} width='250' height='250'><br><br>
+          <input type='file' name='deviceimage'>  <input type='submit' value='Edit Picture' name='btn'>
+      </td>
+      </tr>
+      </table>
+ 
+      {{msg}}
+
+    </form>
+</html>

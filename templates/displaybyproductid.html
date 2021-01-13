@@ -1,0 +1,50 @@
+<html>
+<body bgcolor="lightblue">
+
+<form action='/editdeleteproduct' method="POST" enctype="multipart/form-data">{%csrf_token%}
+<table>
+    <tr>
+        <td>
+    <center><b><font size='5'>Device information</b></center>
+
+        <center>
+     <table>
+<tr>
+<td><b>Device Id:</b></td>
+<td><input type='text' name='deviceid' value={{result.0}}></td>
+</tr>
+<tr>
+<td><b>Product Id:</b></td>
+<td><input type='text' name='productid' value={{result.1}}></td>
+</tr>
+<tr>
+<td><b>Product Name:</b></td>
+<td><input type='text' name='productname' value={{result.2}}></td>
+</tr>
+<tr>
+<td><b>Product Model:</b></td>
+<td><input type='text' name='productmodel' value={{result.3}}></td>
+</tr>
+<tr>
+<td><b>Price:</b></td>
+<td><input type='numeric' name='price' value={{result.4}}></td>
+</tr>
+<tr>
+<td><b>Description:</b></td>
+<td><textarea height='3' rows='3' colms='3' name='description'>{{result.5}}</textarea></td>
+</tr>
+<tr><tr>
+<td><input type='submit' value='Edit' name='btn'></td>
+<td><input type='submit' value='Delete' name='btn'></td><br>
+</tr>
+</table>
+</td>
+<td><img src=/static/{{result.6}} width='200' height='200'><br><br>
+<input type='file' name='image'><input type='submit' value='Edit Picture' name='btn'>
+</td>
+</tr></table>
+{{msg}}
+</center>
+</form>
+</body>
+</html>
